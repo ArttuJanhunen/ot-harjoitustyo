@@ -1,0 +1,165 @@
+commit a605a5df9c19c962de3dde49bcd098302c4f53ed
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 15:35:26 2019 +0200
+
+    Ollin luvalla epäonnistunut versio palautukseen
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit aed23e2d5ae2e91c4d2ed574a57b481d3c9d9b39
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 15:26:07 2019 +0200
+
+    tuoreet filet
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 4df24b65d1fffec10602b963704d4acc96724488
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 15:25:17 2019 +0200
+
+    kokeillaan poistaa ja ihmetellään lisää
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d92f30f9e67a886985e5b5cf12dd1af5b5476297
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 14:42:30 2019 +0200
+
+    uusi yritys
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit a7f0e5f130b07d15ba42af60c3967de61e0ff15c
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 14:41:17 2019 +0200
+
+    kokeillaan uudestaan, jostain syystä file1 muutti nimeään
+
+ tiedostoja/file22 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 214b554680a812b2773e12daf977ee7e4a834466
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 14:39:17 2019 +0200
+
+    poisto ja uudelleennimeäminen
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 1c853e9ef7a4d17cc52909a19fa9c1f93032b1ab
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 14:26:17 2019 +0200
+
+    tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit aa4c7d18a04a9b1d03d2430f06e5832a0386a1d9
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 14:19:47 2019 +0200
+
+    lisää muutoksia
+
+ eka.txt    | 4 ++--
+ kolmas.txt | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit dd627f56d85f6b653343b4f14a86d28c15d36a39
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 14:17:26 2019 +0200
+
+    nimen muutos
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit fdf5f5820d48ca36f61f4f380e689ec87574da1f
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 14:15:27 2019 +0200
+
+    poistettiin toinen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 05ff340f9e82b6733149e6132c0d9262acdc8aee
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 14:11:56 2019 +0200
+
+    tekstin muokkausta tiedostossa
+
+ tiedosto.txt | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit ac7a578e0d4cc495be2466237052a5b9f35d6565
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 14:10:13 2019 +0200
+
+    paljon tekstiä tiedostoon
+
+ tiedosto.txt | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit 0f54ef82b48cb8f8c39700e64228391564499bca
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 01:40:45 2019 +0200
+
+    stuff
+
+ stuff/something.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b74cdf24643c951f24a69046c730af89d1c3551e
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 01:39:15 2019 +0200
+
+    muutokset mukaan
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit d7d0b505dde2eda9ee8158a2215433261c8effd2
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 01:38:05 2019 +0200
+
+    kolmannen lisäys
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b4dc73df8b3bde57eaa32247da058b03a4800ba9
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 01:21:29 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 2201dbceee5c8e111adbf36ca088ae85a520a438
+Author: Arttu Janhunen <arttu.janhunen@gmail.com>
+Date:   Tue Mar 19 01:19:48 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
