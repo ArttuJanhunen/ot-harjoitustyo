@@ -1,6 +1,5 @@
 # Ohjelmistotekniikka
 
-Tavallista tekstiä, jossa on **lihavoituja** ja *kursivoituja* kohtia.
 
 ## Tehtävät
 
