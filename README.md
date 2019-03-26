@@ -7,4 +7,4 @@
 
 [gitlog.txt](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
-epäsynkroni
+[Määrittelydokumentti](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
