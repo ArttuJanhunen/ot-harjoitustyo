@@ -23,6 +23,7 @@ Toiminnallisuudet:
 		* Samoja sanoja erivärisinä objekteina
 * Rajoitteet
 	* Pistetaulukko tallennetaan paikalliseen muistiin tietokantaan
+	* Sovellus toimii linux-pohjaisilla järjestelmillä
 * Jatkokehitysideoita
 	* Kuvakortteja objektipareina
 	* Vaikeustason nosto objektiparien määrää kasvattamalla
