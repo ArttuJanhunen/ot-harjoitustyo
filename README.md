@@ -4,6 +4,8 @@
 
 [Määrittelydokumentti](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
+[Työaikakirjanpito](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+
 ## Tehtävät
 
 ### Viikko 1
