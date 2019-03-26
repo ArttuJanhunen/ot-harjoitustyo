@@ -2,7 +2,7 @@
 
 # Muistipeli
 
-[Määrittelydokumentti](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/maarit$
+[Määrittelydokumentti](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
 ## Tehtävät
 
