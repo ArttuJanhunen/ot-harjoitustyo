@@ -1,5 +1,9 @@
 # Ohjelmistotekniikka
 
+# Muistipeli
+
+[Määrittelydokumentti](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/maarit$
+
 ## Tehtävät
 
 ### Viikko 1
@@ -7,4 +11,3 @@
 
 [gitlog.txt](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
-[Määrittelydokumentti](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
