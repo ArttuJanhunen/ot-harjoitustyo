@@ -10,33 +10,34 @@ package com.mycompany.muistipeli.logics;
  * @author ajanhune
  */
 public class Card {
+
     private String word;
     private boolean flipped;
     private boolean isPaired;
-    
-    public Card(String word){
-        this.word=word;
-        this.flipped=false;
-        this.isPaired=false;
+
+    public Card(String word) {
+        this.word = word;
+        this.flipped = false;
+        this.isPaired = false;
     }
-    
-    public String getWord(){
+
+    public String getWord() {
         return this.word;
     }
-    
-    public boolean isFlipped(){
+
+    public boolean isFlipped() {
         return this.flipped;
     }
-    
-    public void flipCard(){
+
+    public void flipCard() {
         this.flipped = !this.flipped;
     }
-    
-    public boolean isPaired(){
+
+    public boolean isPaired() {
         return this.isPaired;
     }
-    
-    public void setPaired(){
-        this.isPaired=true;
+
+    public void setPaired() {
+        this.isPaired = true;
     }
 }

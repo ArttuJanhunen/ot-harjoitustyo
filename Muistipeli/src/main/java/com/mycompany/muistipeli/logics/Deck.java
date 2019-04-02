@@ -69,7 +69,7 @@ public class Deck {
     }
 
     public String getWord(int cardNumber) {
-        return deck.get(cardNumber-1).getWord();
+        return deck.get(cardNumber - 1).getWord();
     }
 
     public int pairsLeft() {
@@ -97,13 +97,17 @@ public class Deck {
 
         return cardsLeft;
     }
-    
-    public void availableCards(){
-        for (int i = 0; i<deck.size(); i++){
-            if (!deck.get(i).isPaired()){
-                System.out.print((i+1)+" ");
+
+    public void availableCards() {
+        for (int i = 0; i < deck.size(); i++) {
+            if (!deck.get(i).isPaired()) {
+                System.out.print((i + 1) + " ");
             }
         }
+    }
+
+    public Card getCard(int index) {
+        return deck.get(index);
     }
 
 }

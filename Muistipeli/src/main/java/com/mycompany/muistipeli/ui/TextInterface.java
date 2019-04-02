@@ -29,6 +29,7 @@ public class TextInterface {
         System.out.println("Pelataan muistipeliä!");
         System.out.println("Valitse kortti antamalla kortin numero");
         System.out.println("Peli loppuu kun olet löytänyt kaikki parit");
+        System.out.println("Pelin voi lopettaa syöttämällä merkin x");
         System.out.println("Pareja on: " + deck.deckSize() / 2);
         System.out.println("Kortteja on: " + deck.deckSize());
         while (true) {
@@ -45,24 +46,32 @@ public class TextInterface {
             System.out.println("");
 
             System.out.println("Valitse ensimmäinen kortti: ");
+            String input = scanner.nextLine();
             try {
-                int firstCardNumber = Integer.parseInt(scanner.nextLine());
+                int firstCardNumber = Integer.parseInt(input);
                 deck.flipCard(firstCardNumber - 1);
                 String firstCard = deck.getWord(firstCardNumber);
                 System.out.println("Ensimmäinen kortti: " + firstCardNumber + " Sisältö: " + firstCard);
 
                 System.out.println("Valitse toinen kortti: ");
+                String secondInput = scanner.nextLine();
                 try {
-                    int secondCardNumber = Integer.parseInt(scanner.nextLine());
+                    int secondCardNumber = Integer.parseInt(secondInput);
                     deck.flipCard(secondCardNumber - 1);
                     String secondCard = deck.getWord(secondCardNumber);
                     System.out.println("Toinen kortti: " + secondCardNumber + " Sisältö: " + secondCard);
                     deck.checkPair(firstCardNumber, secondCardNumber);
                 } catch (NumberFormatException e) {
+                    if ("x".equals(secondInput)) {
+                        break;
+                    }
                     System.out.println("Syötä lukuarvo!");
                 }
 
             } catch (NumberFormatException e) {
+                if ("x".equals(input)) {
+                    break;
+                }
                 System.out.println("Syötä lukuarvo!");
             }
             System.out.println("");
