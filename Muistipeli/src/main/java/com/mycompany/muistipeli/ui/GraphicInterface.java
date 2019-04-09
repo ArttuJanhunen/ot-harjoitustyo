@@ -45,7 +45,7 @@ public class GraphicInterface extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        int height = 500;
+        int height = 700;
         int width = 600;
         stage.setTitle("Muistipeli");
         stage.setHeight(height);
@@ -60,6 +60,19 @@ public class GraphicInterface extends Application {
             buttonList.add(newButton);
         }
 
+        Button checkButton = new Button("Tarkasta");
+        checkButton.setMinHeight(100);
+        checkButton.setMinWidth(100);
+
+        checkButton.setOnAction(e -> {
+            checkCardPair();
+            if (deck.isDone()) {
+                for (int i = 0; i < deck.deckSize(); i++) {
+                    buttonList.get(i).setText("Voitit!");
+                }
+            }
+        });
+
         for (Button button : buttonList) {
             button.setMinHeight(100);
             button.setMinWidth(100);
@@ -70,12 +83,9 @@ public class GraphicInterface extends Application {
                     flippedList.add(cardNumber);
                     button.setText(deck.getWord(cardNumber));
                     flipFlippedCards();
+                    System.out.println("Pareja jäljellä: " + deck.pairsLeft());
                 } catch (NumberFormatException a) {
-                    if (deck.isDone()) {
-                        for (int i = 0; i < deck.deckSize(); i++) {
-                            buttonList.get(i).setText("Voitit!");
-                        }
-                    }
+
                 }
             });
         }
@@ -87,6 +97,7 @@ public class GraphicInterface extends Application {
                 i++;
             }
         }
+        table.add(checkButton, 2, 5);
 
         Scene tableView = new Scene(table);
 
