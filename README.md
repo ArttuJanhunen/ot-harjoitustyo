@@ -17,4 +17,4 @@
 
 ### Suoritus komentoriviltä
 
-mvn compile exec:java -Dexec.mainClass=com.mycompany.muistipeli.ui.TextInterface
+mvn compile exec:java -Dexec.mainClass=com.mycompany.muistipeli.ui.GraphicInterface

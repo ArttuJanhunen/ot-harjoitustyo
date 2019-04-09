@@ -49,10 +49,10 @@ public class Deck {
             deck.get(second).setPaired();
         }
         if (first != second) {
-            flipCard(first - 1);
-            flipCard(second - 1);
+            flipCard(first);
+            flipCard(second);
         } else {
-            flipCard(first - 1);
+            flipCard(first);
         }
 
     }
@@ -67,7 +67,7 @@ public class Deck {
     }
 
     public String getWord(int cardNumber) {
-        return deck.get(cardNumber - 1).getWord();
+        return deck.get(cardNumber).getWord();
     }
 
     public int pairsLeft() {
@@ -99,7 +99,7 @@ public class Deck {
     public void availableCards() {
         for (int i = 0; i < deck.size(); i++) {
             if (!deck.get(i).isPaired()) {
-                System.out.print((i + 1) + " ");
+                System.out.print((i) + " ");
             }
         }
     }

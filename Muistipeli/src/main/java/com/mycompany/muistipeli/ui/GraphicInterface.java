@@ -9,6 +9,9 @@ import com.mycompany.muistipeli.logics.Card;
 import com.mycompany.muistipeli.logics.Deck;
 import com.mycompany.muistipeli.logics.DeckInitiator;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -36,7 +39,7 @@ public class GraphicInterface extends Application {
         this.initor = new DeckInitiator();
         initor.initiateDeck(deck);
         deck.shuffleDeck();
-        flippedList = new ArrayList();
+        flippedList = new ArrayList<>();
     }
 
     @Override
@@ -51,26 +54,25 @@ public class GraphicInterface extends Application {
         table.setAlignment(Pos.CENTER);
 
         buttonList = new ArrayList();
-
-        for (int i = 1; i <= deck.deckSize(); i++) {
+        for (int i = 0; i < deck.deckSize(); i++) {
             Button newButton = new Button(String.valueOf(i));
-            newButton.setMinHeight(100);
-            newButton.setMinWidth(100);
-            newButton.setOnAction(e -> {
+            buttonList.add(newButton);
+        }
+
+        for (Button button : buttonList) {
+            button.setMinHeight(100);
+            button.setMinWidth(100);
+            button.setOnAction(e -> {
                 try {
-                    int cardNumber = Integer.parseInt(newButton.getText());
-                    deck.flipCard(cardNumber - 1);
-                    if (deck.getCard(cardNumber - 1).isFlipped()) {
-                        newButton.setText(deck.getWord(cardNumber));
-                    }
-                    checkFlipped();
+                    int cardNumber = Integer.parseInt(button.getText());
+                    deck.flipCard(cardNumber);
+                    flippedList.add(cardNumber);
+                    button.setText(deck.getWord(cardNumber));
+                    flipFlippedCards();
                 } catch (NumberFormatException a) {
 
                 }
-
             });
-
-            buttonList.add(newButton);
         }
 
         int i = 0;
@@ -87,35 +89,43 @@ public class GraphicInterface extends Application {
         stage.show();
     }
 
-    public void checkFlipped() {
-
-        for (int i = 0; i < deck.deckSize(); i++) {
-            if (deck.getCard(i).isFlipped()) {
-                flippedList.add(i);
-            }
-        }
-
-        if (flippedList.size() == 2) {
-            deck.checkPair(flippedList.get(0) + 1, flippedList.get(1) + 1);
-            pairedCards();
-            flipCards();
-            flippedList.clear();
-        }
-    }
-
-    public void flipCards() {
+    public int amountOfVisibleCards() {
+        int current = 0;
         for (int i = 0; i < deck.deckSize(); i++) {
             if (deck.getCard(i).isFlipped() && !deck.getCard(i).isPaired()) {
-                deck.getCard(i).flipCard();
-                buttonList.get(i).setText(String.valueOf(i + 1));
+                current++;
+
             }
         }
+        return current;
     }
 
-    public void pairedCards() {
-        for (int i = 0; i < deck.deckSize(); i++) {
-            if (deck.getCard(i).isPaired()) {
-                buttonList.get(i).setText("Kortti pelattu");
+    public void flipFlippedCards() {
+        if (amountOfVisibleCards() > 2) {
+            checkCardPair();
+            for (int i = 0; i < deck.deckSize(); i++) {
+                buttonList.get(i).setText(String.valueOf(i));
+                if (deck.getCard(i).isPaired()) {
+                    buttonList.get(i).setText("Löydetty");
+                } else if (deck.getCard(i).isFlipped()) {
+                    deck.flipCard(i);
+                }
+
+            }
+        }
+
+    }
+
+    public void checkCardPair() {
+        if (amountOfVisibleCards() >= 2) {
+            System.out.println(flippedList.get(0));
+            System.out.println(flippedList.get(1));
+            deck.checkPair(flippedList.get(0), flippedList.get(1));
+            flippedList.clear();
+        }
+        if (deck.isDone()) {
+            for (int i = 0; i < deck.deckSize(); i++) {
+                buttonList.get(i).setText("Voitit!");
             }
         }
     }
