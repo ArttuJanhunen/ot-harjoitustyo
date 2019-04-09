@@ -14,8 +14,9 @@
 
 ### Testit
 
-* Testit : mvn test
+* Testit: mvn test
 * Testikattavuusraportti: mvn jacoco:report
+* Checkstyle: mvn jxr:jxr checkstyle:checkstyle 
 
 ### Suoritus komentoriviltä
 
