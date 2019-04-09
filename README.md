@@ -8,6 +8,8 @@
 
 [Työaikakirjanpito](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
+[Arkkitehtuuri](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## Komentorivitoiminnot
 
 ### Testit
