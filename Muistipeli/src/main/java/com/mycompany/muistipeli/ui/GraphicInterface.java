@@ -8,6 +8,7 @@ package com.mycompany.muistipeli.ui;
 import com.mycompany.muistipeli.logics.Card;
 import com.mycompany.muistipeli.logics.Deck;
 import com.mycompany.muistipeli.logics.DeckInitiator;
+import com.sun.prism.impl.PrismSettings;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -70,7 +71,11 @@ public class GraphicInterface extends Application {
                     button.setText(deck.getWord(cardNumber));
                     flipFlippedCards();
                 } catch (NumberFormatException a) {
-
+                    if (deck.isDone()) {
+                        for (int i = 0; i < deck.deckSize(); i++) {
+                            buttonList.get(i).setText("Voitit!");
+                        }
+                    }
                 }
             });
         }
@@ -122,11 +127,6 @@ public class GraphicInterface extends Application {
             System.out.println(flippedList.get(1));
             deck.checkPair(flippedList.get(0), flippedList.get(1));
             flippedList.clear();
-        }
-        if (deck.isDone()) {
-            for (int i = 0; i < deck.deckSize(); i++) {
-                buttonList.get(i).setText("Voitit!");
-            }
         }
     }
 

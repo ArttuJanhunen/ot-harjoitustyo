@@ -36,7 +36,7 @@ public class CardTest {
     }
 
     @Test
-    public void cardWordIsInitiarted() {
+    public void cardWordIsInitiated() {
         assertEquals("Kala", card.getWord());
     }
 

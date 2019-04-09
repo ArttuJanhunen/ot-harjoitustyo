@@ -34,4 +34,35 @@ public class DeckTest {
         assertEquals(true, deck.getCard(0).isFlipped());
     }
 
+    @Test
+    public void checkPairworks() {
+        deck.addCard(new Card("Kala"));
+
+        assertEquals(false, deck.getCard(0).isPaired());
+        assertEquals(false, deck.getCard(1).isPaired());
+
+        deck.checkPair(0, 1);
+
+        assertEquals(true, deck.getCard(0).isPaired());
+        assertEquals(true, deck.getCard(1).isPaired());
+    }
+
+    @Test
+    public void isDoneWorks() {
+        deck.addCard(new Card("Kala"));
+
+        assertEquals(false, deck.isDone());
+
+        deck.checkPair(0, 1);
+
+        assertEquals(true, deck.isDone());
+    }
+
+    @Test
+    public void pairsLeftWorks() {
+        deck.addCard(new Card("Kala"));
+
+        assertEquals(1, deck.pairsLeft());
+    }
+
 }

@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import com.mycompany.muistipeli.logics.Deck;
+import com.mycompany.muistipeli.logics.DeckInitiator;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,28 +19,22 @@ import static org.junit.Assert.*;
  */
 public class DeckInitiatorTest {
 
-    public DeckInitiatorTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
+    private DeckInitiator initor;
 
     @Before
     public void setUp() {
+        initor = new DeckInitiator();
     }
 
-    @After
-    public void tearDown() {
+    @Test
+    public void initiatorFillsDeck() {
+        Deck deck = new Deck();
+        assertEquals(0, deck.deckSize());
+
+        initor.initiateDeck(deck);
+
+        assertEquals(20, deck.deckSize());
+
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
