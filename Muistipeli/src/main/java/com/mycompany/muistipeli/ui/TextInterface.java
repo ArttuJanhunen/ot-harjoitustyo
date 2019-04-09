@@ -80,10 +80,10 @@ public class TextInterface {
         }
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         TextInterface memoryGame = new TextInterface();
 
         memoryGame.run(scanner);
-    }
+    }*/
 }

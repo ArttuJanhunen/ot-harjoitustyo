@@ -37,9 +37,7 @@ public class Deck {
     }
 
     public void flipCard(int chosen) {
-        Card flipped = deck.get(chosen);
-        flipped.flipCard();
-        deck.set(chosen, flipped);
+        getCard(chosen).flipCard();
     }
 
     public void checkPair(int first, int second) {
@@ -47,8 +45,8 @@ public class Deck {
         String firstWord = getWord(first);
         String secondWord = getWord(second);
         if (firstWord.equals(secondWord) && first != second) {
-            deck.get(first - 1).setPaired();
-            deck.get(second - 1).setPaired();
+            deck.get(first).setPaired();
+            deck.get(second).setPaired();
         }
         if (first != second) {
             flipCard(first - 1);
