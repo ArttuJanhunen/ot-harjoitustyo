@@ -10,6 +10,8 @@
 
 [Arkkitehtuuri](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Release](https://github.com/ArttuJanhunen/ot-harjoitustyo/releases)
+
 ## Komentorivitoiminnot
 
 ### Testit
@@ -21,3 +23,7 @@
 ### Suoritus komentoriviltä
 
 mvn compile exec:java -Dexec.mainClass=com.mycompany.muistipeli.ui.GraphicInterface
+
+### Paketointi jar-tiedostoksi
+
+* mvn package
