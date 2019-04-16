@@ -108,4 +108,8 @@ public class Deck {
         return deck.get(index);
     }
 
+    public void clear() {
+        deck.clear();
+    }
+
 }
