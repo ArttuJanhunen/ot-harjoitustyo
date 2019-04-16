@@ -2,6 +2,9 @@
 
 # Muistipeli
 
+Muistipeli on peli, jossa pelaaja kääntelee kortteja ja yrittää löytää pareja muistinsa avulla.
+Tämä sovellus mukailee pelin ideaa. 
+
 ## Dokumentaatio
 
 [Määrittelydokumentti](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
@@ -22,7 +25,7 @@
 
 ### Suoritus komentoriviltä
 
-mvn compile exec:java -Dexec.mainClass=com.mycompany.muistipeli.ui.GraphicInterface
+* mvn compile exec:java -Dexec.mainClass=com.mycompany.muistipeli.ui.GraphicInterface
 
 ### Paketointi jar-tiedostoksi
 

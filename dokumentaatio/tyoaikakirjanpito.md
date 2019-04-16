@@ -6,6 +6,8 @@
 | 2.4. |5| Ohjelmointia |
 |  | 1 | Github-repositorion siistiminen |
 | 9.4. | 5 | Ohjelmointia|
-|| 1 | java-version kanssa ihmettelyä |
-|| 1 | dokumentaation täydennystä |
-| yht | 15 | |
+|| 1 | Java-version kanssa ihmettelyä |
+|| 1 | Dokumentaation täydennystä |
+| 16.4. | 4 | Ohjelmointia |
+|| 1 | Dokumentaation täydennystä|
+| yht | 20 | |
