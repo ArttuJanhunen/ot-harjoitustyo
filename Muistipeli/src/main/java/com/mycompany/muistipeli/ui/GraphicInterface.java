@@ -128,7 +128,7 @@ public class GraphicInterface extends Application {
         }
         table.add(checkButton, 2, 5);
         table.add(exitGame, 2, 6);
-        time.setPadding(new Insets(40, 40, 40, 40));
+        time.setPadding(new Insets(30, 30, 30, 30));
         table.add(time, 3, 5);
         table.add(playerName, 0, 5);
         table.add(submitPlayer, 0, 6);
@@ -231,8 +231,6 @@ public class GraphicInterface extends Application {
 
     public void checkCardPair() {
         if (amountOfVisibleCards() >= 2) {
-            System.out.println(flippedList.get(0));
-            System.out.println(flippedList.get(1));
             deck.checkPair(flippedList.get(0), flippedList.get(1));
             flippedList.clear();
         }
