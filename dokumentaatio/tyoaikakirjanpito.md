@@ -10,4 +10,6 @@
 || 1 | Dokumentaation täydennystä |
 | 16.4. | 4 | Ohjelmointia |
 || 1 | Dokumentaation täydennystä|
-| yht | 20 | |
+| 25.4. | 2 | Ohjelmointia |
+|| 1 | Javadocien kirjoittaminen |
+| yht | 23 | |
