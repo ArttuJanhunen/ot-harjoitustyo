@@ -22,24 +22,54 @@ public class Deck {
         this.flippedCards = new ArrayList();
     }
 
+    /**
+     * 
+     * @param card takes card as a value, duplicates it and adds both to the deck
+     * @see DeckInitiator#initiateDeck(com.mycompany.muistipeli.logics.Deck) 
+     */
     public void addCard(Card card) {
         deck.add(card);
         Card pair = new Card(card.getWord());
         deck.add(pair);
     }
-
+    
+    /**
+     * Shuffles the deck
+     */
     public void shuffleDeck() {
         Collections.shuffle(deck);
     }
 
+    /**
+     * 
+     * @return returns size of the private list deck
+     */
     public int deckSize() {
         return deck.size();
     }
 
+    /**
+     * 
+     * @param chosen chosen is the index of the card to be flipped. 
+     * Flips the card that is located in that index in private list deck
+     * @see #getCard(int) 
+     * @see Card#flipCard() 
+     */
     public void flipCard(int chosen) {
         getCard(chosen).flipCard();
     }
 
+    /**
+     * 
+     * @param first index of the first wanted card in deck
+     * @param second index of the second wanted card in deck
+     * Gets the words the cards have in them and checks if they match. If they match
+     * both cards are set as paired. If not, both cards are flipped back around
+     * @see Card#setPaired() 
+     * @see #flipCard(int)
+     * @see #getWord(int) 
+     * 
+     */
     public void checkPair(int first, int second) {
 
         String firstWord = getWord(first);
