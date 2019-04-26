@@ -48,6 +48,35 @@ public class DeckTest {
     }
 
     @Test
+    public void checkPairWorksWhenCardsDontMatch() {
+        deck.addCard(new Card("Kala"));
+        deck.addCard(new Card("Possu"));
+
+        assertEquals(false, deck.getCard(0).isPaired());
+        assertEquals(false, deck.getCard(2).isPaired());
+
+        deck.checkPair(0, 2);
+
+        assertEquals(false, deck.getCard(0).isPaired());
+        assertEquals(false, deck.getCard(1).isPaired());
+
+    }
+
+    @Test
+    public void checkpairFlipsCardOnlyOnceIfItChecksSameIndexTwice() {
+        deck.addCard(new Card("Kala"));
+        deck.checkPair(0, 0);
+
+        assertEquals(false, deck.getCard(0).isFlipped());
+        assertEquals(false, deck.getCard(0).isPaired());
+
+        deck.flipCard(0);
+        deck.checkPair(0, 0);
+
+        assertEquals(false, deck.getCard(0).isFlipped());
+    }
+
+    @Test
     public void isDoneWorks() {
         deck.addCard(new Card("Kala"));
 
@@ -63,6 +92,44 @@ public class DeckTest {
         deck.addCard(new Card("Kala"));
 
         assertEquals(1, deck.pairsLeft());
+    }
+
+    @Test
+    public void cardsLeftWorks() {
+        deck.addCard(new Card("Kala"));
+        deck.addCard(new Card("Possu"));
+
+        assertEquals(4, deck.cardsLeft());
+
+        deck.getCard(0).setPaired();
+
+        assertEquals(3, deck.cardsLeft());
+    }
+
+    @Test
+    public void clearWorks() {
+        deck.addCard(new Card("Kala"));
+        deck.addCard(new Card("Possu"));
+
+        assertEquals(4, deck.deckSize());
+
+        deck.clear();
+
+        assertEquals(0, deck.deckSize());
+    }
+
+    @Test
+    public void whenPairsLeftIsCalledAndCardsArePairedIntCardsLeftReduces() {
+        deck.addCard(new Card("Kala"));
+        deck.addCard(new Card("Possu"));
+
+        assertEquals(2, deck.pairsLeft());
+
+        deck.getCard(0).setPaired();
+        deck.getCard(1).setPaired();
+
+        assertEquals(1, deck.pairsLeft());
+
     }
 
 }

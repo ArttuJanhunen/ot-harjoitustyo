@@ -23,16 +23,17 @@ public class Deck {
     }
 
     /**
-     * 
-     * @param card takes card as a value, duplicates it and adds both to the deck
-     * @see DeckInitiator#initiateDeck(com.mycompany.muistipeli.logics.Deck) 
+     *
+     * @param card takes card as a value, duplicates it and adds both to the
+     * deck
+     * @see DeckInitiator#initiateDeck(com.mycompany.muistipeli.logics.Deck)
      */
     public void addCard(Card card) {
         deck.add(card);
         Card pair = new Card(card.getWord());
         deck.add(pair);
     }
-    
+
     /**
      * Shuffles the deck
      */
@@ -41,7 +42,7 @@ public class Deck {
     }
 
     /**
-     * 
+     *
      * @return returns size of the private list deck
      */
     public int deckSize() {
@@ -49,26 +50,26 @@ public class Deck {
     }
 
     /**
-     * 
-     * @param chosen chosen is the index of the card to be flipped. 
-     * Flips the card that is located in that index in private list deck
-     * @see #getCard(int) 
-     * @see Card#flipCard() 
+     *
+     * @param chosen chosen is the index of the card to be flipped. Flips the
+     * card that is located in that index in private list deck
+     * @see #getCard(int)
+     * @see Card#flipCard()
      */
     public void flipCard(int chosen) {
         getCard(chosen).flipCard();
     }
 
     /**
-     * 
+     *
      * @param first index of the first wanted card in deck
-     * @param second index of the second wanted card in deck
-     * Gets the words the cards have in them and checks if they match. If they match
-     * both cards are set as paired. If not, both cards are flipped back around
-     * @see Card#setPaired() 
+     * @param second index of the second wanted card in deck Gets the words the
+     * cards have in them and checks if they match. If they match both cards are
+     * set as paired. If not, both cards are flipped back around
+     * @see Card#setPaired()
      * @see #flipCard(int)
-     * @see #getWord(int) 
-     * 
+     * @see #getWord(int)
+     *
      */
     public void checkPair(int first, int second) {
 
@@ -82,15 +83,17 @@ public class Deck {
             flipCard(first);
             flipCard(second);
         } else {
-            flipCard(first);
+            if (deck.get(first).isFlipped()) {
+                flipCard(first);
+            }
         }
 
     }
 
     /**
-     * 
-     * @return returns boolean value true or false. True meaning that all cards are
-     * paired, false meaning that there are some cards left.
+     *
+     * @return returns boolean value true or false. True meaning that all cards
+     * are paired, false meaning that there are some cards left.
      */
     public boolean isDone() {
         for (Card card : deck) {
@@ -102,7 +105,7 @@ public class Deck {
     }
 
     /**
-     * 
+     *
      * @param cardNumber index of the card in deck
      * @return returns word that is written on the card
      */
@@ -111,9 +114,9 @@ public class Deck {
     }
 
     /**
-     * 
+     *
      * @return retuns int value that tells the current amount of pairs left
-     * @see #cardsLeft() 
+     * @see #cardsLeft()
      */
     public int pairsLeft() {
         int cardsLeft = deck.size();
@@ -129,9 +132,8 @@ public class Deck {
         return pairsLeft;
     }
 
-    
     /**
-     * 
+     *
      * @return returns int value that tells the current amount of cards left
      */
     public int cardsLeft() {
@@ -147,19 +149,7 @@ public class Deck {
     }
 
     /**
-     * prints indexes of the cards that aren't paired yet
-     * @see Card#isPaired
-     */
-    public void availableCards() {
-        for (int i = 0; i < deck.size(); i++) {
-            if (!deck.get(i).isPaired()) {
-                System.out.print((i) + " ");
-            }
-        }
-    }
-
-    /**
-     * 
+     *
      * @param index of the card in the deck
      * @return returns the card that is located in given index
      */

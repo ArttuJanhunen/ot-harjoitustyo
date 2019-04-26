@@ -29,6 +29,12 @@ public class CardTest {
     public void cardFlippedIsFalseInStart() {
         assertEquals(false, card.isFlipped());
     }
+    
+    @Test
+    public void flipCardFlipsCard(){
+        card.flipCard();
+        assertEquals(true, card.isFlipped());
+    }
 
     @Test
     public void cardPairedIsFalseInStart() {
