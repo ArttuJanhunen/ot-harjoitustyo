@@ -13,6 +13,8 @@ Tämä sovellus mukailee pelin ideaa.
 
 [Arkkitehtuuri](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Käyttöohjeet](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 [Release](https://github.com/ArttuJanhunen/ot-harjoitustyo/releases)
 
 ## Komentorivitoiminnot
