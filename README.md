@@ -30,3 +30,7 @@ Tämä sovellus mukailee pelin ideaa.
 ### Paketointi jar-tiedostoksi
 
 * mvn package
+
+### JavaDoc -raportti
+
+* mvn javadoc:javadoc

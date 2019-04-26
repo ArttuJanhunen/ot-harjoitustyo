@@ -27,6 +27,13 @@ public class DeckInitiator {
         words[9] = "Kameli";
     }
 
+    /**
+     * 
+     * @param deck this method initiates the deck that is given as parameter. It 
+     * goes trough a list of objects, creates cards from these objects and calls addCard-method that belongs to the
+     * given deck
+     * @see Deck#addCard(com.mycompany.muistipeli.logics.Card) 
+     */
     public void initiateDeck(Deck deck) {
         for (String word : words) {
             deck.addCard(new Card(word));

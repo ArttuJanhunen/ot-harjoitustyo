@@ -87,6 +87,11 @@ public class Deck {
 
     }
 
+    /**
+     * 
+     * @return returns boolean value true or false. True meaning that all cards are
+     * paired, false meaning that there are some cards left.
+     */
     public boolean isDone() {
         for (Card card : deck) {
             if (!card.isPaired()) {
@@ -96,10 +101,20 @@ public class Deck {
         return true;
     }
 
+    /**
+     * 
+     * @param cardNumber index of the card in deck
+     * @return returns word that is written on the card
+     */
     public String getWord(int cardNumber) {
         return deck.get(cardNumber).getWord();
     }
 
+    /**
+     * 
+     * @return retuns int value that tells the current amount of pairs left
+     * @see #cardsLeft() 
+     */
     public int pairsLeft() {
         int cardsLeft = deck.size();
 
@@ -114,6 +129,11 @@ public class Deck {
         return pairsLeft;
     }
 
+    
+    /**
+     * 
+     * @return returns int value that tells the current amount of cards left
+     */
     public int cardsLeft() {
         int cardsLeft = deck.size();
 
@@ -126,6 +146,10 @@ public class Deck {
         return cardsLeft;
     }
 
+    /**
+     * prints indexes of the cards that aren't paired yet
+     * @see Card#isPaired
+     */
     public void availableCards() {
         for (int i = 0; i < deck.size(); i++) {
             if (!deck.get(i).isPaired()) {
@@ -134,10 +158,18 @@ public class Deck {
         }
     }
 
+    /**
+     * 
+     * @param index of the card in the deck
+     * @return returns the card that is located in given index
+     */
     public Card getCard(int index) {
         return deck.get(index);
     }
 
+    /**
+     * clears private list deck
+     */
     public void clear() {
         deck.clear();
     }

@@ -9,24 +9,14 @@ import com.mycompany.muistipeli.logics.Card;
 import com.mycompany.muistipeli.logics.Deck;
 import com.mycompany.muistipeli.logics.DeckInitiator;
 import com.mycompany.muistipeli.logics.Player;
-import com.sun.prism.impl.PrismSettings;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -38,7 +28,7 @@ import javafx.stage.Stage;
  * @author ajanhune
  */
 public class GraphicInterface extends Application {
-    
+
     private Deck deck;
     private DeckInitiator initor;
     private ArrayList<Button> singleGameButtonList;
@@ -53,7 +43,7 @@ public class GraphicInterface extends Application {
     private int p2;
     private int playerTurn;
     private int pairsLeftBefore;
-    
+
     @Override
     public void init() {
         this.deck = new Deck();
@@ -67,7 +57,7 @@ public class GraphicInterface extends Application {
         this.p1 = 0;
         this.p2 = 0;
     }
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         int height = 700;
@@ -87,19 +77,19 @@ public class GraphicInterface extends Application {
         //Single game view
         GridPane table = new GridPane();
         table.setAlignment(Pos.CENTER);
-        
+
         Button checkSingleButton = new Button("Tarkasta");
         checkSingleButton.setMinHeight(100);
         checkSingleButton.setMinWidth(100);
-        
+
         Button exitSingleGame = new Button("Poistu");
         exitSingleGame.setMinHeight(100);
         exitSingleGame.setMinWidth(100);
-        
+
         TextField playerName = new TextField("Anna nimi");
         playerName.setMaxWidth(100);
         Button submitPlayer = new Button("Tallenna" + "\n" + "tuloksesi!");
-        
+
         checkSingleButton.setOnAction(e -> {
             checkCardPair();
             if (deck.isDone()) {
@@ -107,11 +97,11 @@ public class GraphicInterface extends Application {
                 time.setText(String.valueOf(ending));
                 for (int i = 0; i < deck.deckSize(); i++) {
                     singleGameButtonList.get(i).setText("Voitit!");
-                    
+
                 }
             }
         });
-        
+
         for (Button button : singleGameButtonList) {
             button.setMinHeight(100);
             button.setMinWidth(100);
@@ -124,7 +114,7 @@ public class GraphicInterface extends Application {
                     flipFlippedCards(singleGameButtonList);
                     time.setText(String.valueOf((System.currentTimeMillis() - beginning) / 1000));
                 } catch (NumberFormatException a) {
-                    
+
                 }
             });
         }
@@ -140,25 +130,25 @@ public class GraphicInterface extends Application {
         table.add(time, 3, 5);
         table.add(playerName, 0, 5);
         table.add(submitPlayer, 0, 6);
-        
+
         Scene gameView = new Scene(table);
 
         //Multiplayer view
         GridPane multiplayerTable = new GridPane();
         multiplayerTable.setAlignment(Pos.CENTER);
-        
+
         Button exitMultiGame = new Button("Poistu");
         exitMultiGame.setMinHeight(100);
         exitMultiGame.setMinWidth(100);
-        
+
         Button checkMultiButton = new Button("Tarkasta");
         checkMultiButton.setMinHeight(100);
         checkMultiButton.setMinWidth(100);
-        
+
         Label player1 = new Label("Pelaaja 1: " + p1);
         Label player2 = new Label("Pelaaja 2: " + p2);
         Label turn = new Label("Pelaajan 1" + "\n" + "vuoro");
-        
+
         checkMultiButton.setOnAction(e -> {
             checkCardPair();
             if (pairsLeftBefore != deck.pairsLeft() && pairsLeftBefore == 1) {
@@ -183,7 +173,7 @@ public class GraphicInterface extends Application {
                 }
             }
         });
-        
+
         for (Button button : multiGameButtonList) {
             button.setMinHeight(100);
             button.setMinWidth(100);
@@ -214,24 +204,24 @@ public class GraphicInterface extends Application {
                         pairsLeftBefore = deck.pairsLeft();
                     }
                 } catch (NumberFormatException a) {
-                    
+
                 }
             });
         }
-        
+
         for (int x = 0, i = 0; x < 4; x++) {
             for (int y = 0; y < 5; y++) {
                 multiplayerTable.add(multiGameButtonList.get(i), y, x);
                 i++;
             }
         }
-        
+
         multiplayerTable.add(exitMultiGame, 2, 6);
         multiplayerTable.add(checkMultiButton, 2, 5);
         multiplayerTable.add(player1, 3, 5);
         multiplayerTable.add(player2, 3, 6);
         multiplayerTable.add(turn, 1, 5);
-        
+
         Scene multiplayerView = new Scene(multiplayerTable);
 
         //Menu view
@@ -243,7 +233,7 @@ public class GraphicInterface extends Application {
         menu.getChildren().add(startMultiplayerGame);
         menu.getChildren().add(goToHighscores);
         menu.setAlignment(Pos.CENTER);
-        
+
         Scene menuView = new Scene(menu);
 
         //Highscore view
@@ -253,7 +243,7 @@ public class GraphicInterface extends Application {
         highscores.setAlignment(Pos.TOP_CENTER);
         VBox listOfPlayers = new VBox();
         highscores.getChildren().add(listOfPlayers);
-        
+
         Scene highscoreView = new Scene(highscores);
 
         //Button actions
@@ -267,7 +257,7 @@ public class GraphicInterface extends Application {
             beginning = System.currentTimeMillis();
             time.setText("0");
         });
-        
+
         startMultiplayerGame.setOnAction(e -> {
             playerTurn = 1;
             turn.setText("Pelaajan 1" + "\n" + "vuoro");
@@ -279,12 +269,12 @@ public class GraphicInterface extends Application {
             }
             stage.setScene(multiplayerView);
         });
-        
+
         exitSingleGame.setOnAction(e -> {
             stage.setScene(menuView);
             deck.clear();
         });
-        
+
         exitMultiGame.setOnAction(e -> {
             stage.setScene(menuView);
             deck.clear();
@@ -294,7 +284,7 @@ public class GraphicInterface extends Application {
             player1.setText("Pelaaja 1: 0");
             player2.setText("Pelaaja 2: 0");
         });
-        
+
         submitPlayer.setOnAction(e -> {
             try {
                 String player = playerName.getText();
@@ -308,35 +298,52 @@ public class GraphicInterface extends Application {
                     }
                     ending = 0;
                 }
-                
+
             } catch (Exception a) {
-                
+
             }
         });
-        
+
         backToMenu.setOnAction(e -> {
             stage.setScene(menuView);
         });
-        
+
         goToHighscores.setOnAction(e -> {
             stage.setScene(highscoreView);
         });
-        
+
         stage.setScene(menuView);
         stage.show();
     }
-    
+
+    /**
+     *
+     * @return returns the amount of cards that are flipped so that their
+     * isFlipped-value is true
+     */
     public int amountOfVisibleCards() {
         int current = 0;
         for (int i = 0; i < deck.deckSize(); i++) {
             if (deck.getCard(i).isFlipped() && !deck.getCard(i).isPaired()) {
                 current++;
-                
+
             }
         }
         return current;
     }
-    
+
+    /**
+     *
+     * @param buttonList list of the buttons in the game. This parameter is used
+     * because single player game and multiplayer game have different
+     * buttonlists Flips cards back so the words that they contain are hidden
+     * again. If card is paired it sets text to the button that indicates that
+     * the card is "found".
+     * @see #amountOfVisibleCards()
+     * @see #checkCardPair()
+     * @see Card#isFlipped()
+     * @see Deck#flipCard(int)
+     */
     public void flipFlippedCards(ArrayList<Button> buttonList) {
         if (amountOfVisibleCards() > 2) {
             checkCardPair();
@@ -347,21 +354,25 @@ public class GraphicInterface extends Application {
                 } else if (deck.getCard(i).isFlipped()) {
                     deck.flipCard(i);
                 }
-                
+
             }
         }
-        
+
     }
-    
+
+    /**
+     * When two cards are turned visible in the deck this method uses deck's
+     * method that checks if the two card are a match
+     */
     public void checkCardPair() {
         if (amountOfVisibleCards() >= 2) {
             deck.checkPair(flippedList.get(0), flippedList.get(1));
             flippedList.clear();
         }
     }
-    
+
     public static void main(String[] args) {
         launch(GraphicInterface.class);
     }
-    
+
 }
