@@ -358,6 +358,8 @@ public class GraphicInterface extends Application {
                 highscoreSaver.getHighscores(highscore);
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(GraphicInterface.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(GraphicInterface.class.getName()).log(Level.SEVERE, null, ex);
             }
             Collections.sort(highscore);
             for (Player playerInList : highscore) {
