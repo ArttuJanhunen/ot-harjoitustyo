@@ -5,11 +5,13 @@
  */
 package com.mycompany.muistipeli.ui;
 
+import com.mycompany.muistipeli.dao.PlayerDao;
 import com.mycompany.muistipeli.logics.Card;
 import com.mycompany.muistipeli.logics.Deck;
 import com.mycompany.muistipeli.logics.DeckInitiator;
 import com.mycompany.muistipeli.logics.Player;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.logging.Level;
@@ -45,9 +47,10 @@ public class GraphicInterface extends Application {
     private int p2;
     private int playerTurn;
     private int pairsLeftBefore;
+    private PlayerDao highscoreSaver;
 
     @Override
-    public void init() throws FileNotFoundException {
+    public void init() throws FileNotFoundException, IOException {
         this.deck = new Deck();
         this.initor = new DeckInitiator();
         this.initor.chooseDeck("animaldeck.txt");
@@ -58,6 +61,10 @@ public class GraphicInterface extends Application {
         this.highscore = new ArrayList();
         this.p1 = 0;
         this.p2 = 0;
+        this.highscoreSaver = new PlayerDao();
+        this.highscoreSaver.getHighscores(highscore);
+        Collections.sort(highscore);
+
     }
 
     @Override
@@ -95,8 +102,10 @@ public class GraphicInterface extends Application {
         checkSingleButton.setOnAction(e -> {
             checkCardPair();
             if (deck.isDone()) {
-                ending = (System.currentTimeMillis() - beginning) / 1000;
-                time.setText(String.valueOf(ending));
+                if (ending == 0) {
+                    ending = (System.currentTimeMillis() - beginning) / 1000;
+                    time.setText(String.valueOf(ending));
+                }
                 for (int i = 0; i < deck.deckSize(); i++) {
                     singleGameButtonList.get(i).setText("Voitit!");
 
@@ -238,31 +247,48 @@ public class GraphicInterface extends Application {
         menuButtons.getChildren().add(startMultiplayerGame);
         menuButtons.getChildren().add(goToHighscores);
         menuButtons.getChildren().add(goToDeckOptions);
+        menuButtons.setSpacing(10);
         menu.setAlignment(Pos.CENTER);
-
+        startSingleGame.setMinSize(width - 20, 50);
+        startMultiplayerGame.setMinSize(width - 20, 50);
+        goToHighscores.setMinSize(width - 20, 50);
+        goToDeckOptions.setMinSize(width - 20, 50);
         Scene menuView = new Scene(menu);
 
         //Highscore view
-        FlowPane highscores = new FlowPane();
+        FlowPane highscoresMenu = new FlowPane();
+        VBox highScoreButtonAndList = new VBox();
         Button backToMenu = new Button("Takaisin valikkoon");
-        highscores.getChildren().add(backToMenu);
-        highscores.setAlignment(Pos.TOP_CENTER);
+        highscoresMenu.setAlignment(Pos.TOP_CENTER);
         VBox listOfPlayers = new VBox();
-        highscores.getChildren().add(listOfPlayers);
+        highscoresMenu.getChildren().add(highScoreButtonAndList);
+        highScoreButtonAndList.getChildren().add(backToMenu);
+        highScoreButtonAndList.getChildren().add(listOfPlayers);
+        highScoreButtonAndList.setSpacing(50);
+        highScoreButtonAndList.setAlignment(Pos.TOP_CENTER);
+        listOfPlayers.setSpacing(10);
+        listOfPlayers.setAlignment(Pos.CENTER);
 
-        Scene highscoreView = new Scene(highscores);
+        Scene highscoreView = new Scene(highscoresMenu);
 
         //Deck choosing view
         FlowPane deckMenu = new FlowPane();
+        VBox decksAndButton = new VBox();
         VBox decks = new VBox();
         Button backToMenuDecks = new Button("Takaisin valikkoon");
         Button animals = new Button("Eläimet");
         Button plants = new Button("Kasvit");
-        deckMenu.setAlignment(Pos.CENTER);
-        deckMenu.getChildren().add(decks);
-        decks.getChildren().add(backToMenuDecks);
+        deckMenu.setAlignment(Pos.TOP_CENTER);
+        decksAndButton.setAlignment(Pos.TOP_CENTER);
+        deckMenu.getChildren().add(decksAndButton);
+        decksAndButton.getChildren().add(backToMenuDecks);
+        decksAndButton.getChildren().add(decks);
         decks.getChildren().add(animals);
         decks.getChildren().add(plants);
+        decksAndButton.setSpacing(50);
+        decks.setSpacing(10);
+        animals.setMinSize(width - 20, 50);
+        plants.setMinSize(width - 20, 50);
 
         Scene deckView = new Scene(deckMenu);
 
@@ -275,6 +301,7 @@ public class GraphicInterface extends Application {
             }
             stage.setScene(gameView);
             beginning = System.currentTimeMillis();
+            ending = 0;
             time.setText("0");
         });
 
@@ -311,11 +338,7 @@ public class GraphicInterface extends Application {
                 if (ending > 0) {
                     listOfPlayers.getChildren().clear();
                     highscore.add(new Player(player, ending));
-                    Collections.sort(highscore);
-                    for (Player playerInList : highscore) {
-                        Label playersInList = new Label("Pelaajan nimi: " + playerInList.getName() + " Aika: " + playerInList.getTime());
-                        listOfPlayers.getChildren().add(playersInList);
-                    }
+                    highscoreSaver.saveHighScores(highscore);
                     ending = 0;
                 }
 
@@ -329,6 +352,18 @@ public class GraphicInterface extends Application {
         });
 
         goToHighscores.setOnAction(e -> {
+            listOfPlayers.getChildren().clear();
+            highscore.clear();
+            try {
+                highscoreSaver.getHighscores(highscore);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(GraphicInterface.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Collections.sort(highscore);
+            for (Player playerInList : highscore) {
+                Label playersInList = new Label("Pelaajan nimi: " + playerInList.getName() + " Aika: " + playerInList.getTime());
+                listOfPlayers.getChildren().add(playersInList);
+            }
             stage.setScene(highscoreView);
         });
 
