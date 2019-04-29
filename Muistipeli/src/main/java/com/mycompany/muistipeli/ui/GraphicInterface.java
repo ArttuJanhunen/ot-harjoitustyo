@@ -9,8 +9,11 @@ import com.mycompany.muistipeli.logics.Card;
 import com.mycompany.muistipeli.logics.Deck;
 import com.mycompany.muistipeli.logics.DeckInitiator;
 import com.mycompany.muistipeli.logics.Player;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -38,22 +41,21 @@ public class GraphicInterface extends Application {
     private long beginning;
     private long ending;
     private ArrayList<Player> highscore;
-    private ArrayList<Label> highscoresAsLabels;
     private int p1;
     private int p2;
     private int playerTurn;
     private int pairsLeftBefore;
 
     @Override
-    public void init() {
+    public void init() throws FileNotFoundException {
         this.deck = new Deck();
         this.initor = new DeckInitiator();
+        this.initor.chooseDeck("animaldeck.txt");
         this.singleGameButtonList = new ArrayList<>();
         this.multiGameButtonList = new ArrayList();
         this.flippedList = new ArrayList<>();
         this.time = new Label();
         this.highscore = new ArrayList();
-        this.highscoresAsLabels = new ArrayList<>();
         this.p1 = 0;
         this.p2 = 0;
     }
@@ -226,12 +228,16 @@ public class GraphicInterface extends Application {
 
         //Menu view
         FlowPane menu = new FlowPane();
+        VBox menuButtons = new VBox();
         Button startSingleGame = new Button("Aloita yksinpeli!");
         Button startMultiplayerGame = new Button("Pelaa moninpeli!");
         Button goToHighscores = new Button("Huipputulokset");
-        menu.getChildren().add(startSingleGame);
-        menu.getChildren().add(startMultiplayerGame);
-        menu.getChildren().add(goToHighscores);
+        Button goToDeckOptions = new Button("Valitse pakka");
+        menu.getChildren().add(menuButtons);
+        menuButtons.getChildren().add(startSingleGame);
+        menuButtons.getChildren().add(startMultiplayerGame);
+        menuButtons.getChildren().add(goToHighscores);
+        menuButtons.getChildren().add(goToDeckOptions);
         menu.setAlignment(Pos.CENTER);
 
         Scene menuView = new Scene(menu);
@@ -245,6 +251,20 @@ public class GraphicInterface extends Application {
         highscores.getChildren().add(listOfPlayers);
 
         Scene highscoreView = new Scene(highscores);
+
+        //Deck choosing view
+        FlowPane deckMenu = new FlowPane();
+        VBox decks = new VBox();
+        Button backToMenuDecks = new Button("Takaisin valikkoon");
+        Button animals = new Button("Eläimet");
+        Button plants = new Button("Kasvit");
+        deckMenu.setAlignment(Pos.CENTER);
+        deckMenu.getChildren().add(decks);
+        decks.getChildren().add(backToMenuDecks);
+        decks.getChildren().add(animals);
+        decks.getChildren().add(plants);
+
+        Scene deckView = new Scene(deckMenu);
 
         //Button actions
         startSingleGame.setOnAction(e -> {
@@ -310,6 +330,30 @@ public class GraphicInterface extends Application {
 
         goToHighscores.setOnAction(e -> {
             stage.setScene(highscoreView);
+        });
+
+        backToMenuDecks.setOnAction(e -> {
+            stage.setScene(menuView);
+        });
+
+        goToDeckOptions.setOnAction(e -> {
+            stage.setScene(deckView);
+        });
+
+        animals.setOnAction(e -> {
+            try {
+                initor.chooseDeck("animaldeck.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(GraphicInterface.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+
+        plants.setOnAction(e -> {
+            try {
+                initor.chooseDeck("plantdeck.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(GraphicInterface.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
 
         stage.setScene(menuView);
