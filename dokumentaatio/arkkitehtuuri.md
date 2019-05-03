@@ -1,5 +1,5 @@
 # Sovelluksen pakkausrakenne
-![Pakkausrakenne]()
+![Pakkausrakenne](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/Pakkausrakenne.png)
 
 Pakkauksessa muistipeli.ui sisältää JavaFX -käyttöliittymän, muistipeli.logics sovelluslogiikan ja
 muistipeli.dao huipputulosten pysyväistallennuksen
