@@ -360,7 +360,7 @@ public class GraphicInterface extends Application {
             listOfPlayers.getChildren().clear();
             highscore.clear();
             try {
-                highscoreSaver.getHighscores(highscore, "highscore.txt");
+                highscoreSaver.getHighscores(highscore, "highscores.txt");
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(GraphicInterface.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
