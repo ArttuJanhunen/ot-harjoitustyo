@@ -103,16 +103,18 @@ public class GraphicInterface extends Application {
         Button submitPlayer = new Button("Tallenna" + "\n" + "tuloksesi!");
 
         checkSingleButton.setOnAction(e -> {
-            checkCardPair();
-            if (deck.isDone()) {
-                if (ending == 0) {
-                    ending = (System.currentTimeMillis() - beginning) / 1000;
-                    time.setText(String.valueOf(ending));
-                }
-                for (int i = 0; i < deck.deckSize(); i++) {
-                    singleGameButtonList.get(i).setText("Voitit!");
-                    singleGameButtonList.get(i).setStyle("-fx-background-color:lightgreen; -fx-border-color:black;");
+            if (deck.pairsLeft() < 2) {
+                checkCardPair();
+                if (deck.isDone()) {
+                    if (ending == 0) {
+                        ending = (System.currentTimeMillis() - beginning) / 1000;
+                        time.setText(String.valueOf(ending));
+                    }
+                    for (int i = 0; i < deck.deckSize(); i++) {
+                        singleGameButtonList.get(i).setText("Voitit!");
+                        singleGameButtonList.get(i).setStyle("-fx-background-color:lightgreen; -fx-border-color:black;");
 
+                    }
                 }
             }
         });
@@ -165,29 +167,32 @@ public class GraphicInterface extends Application {
         Label turn = new Label("Pelaajan 1" + "\n" + "vuoro");
 
         checkMultiButton.setOnAction(e -> {
-            checkCardPair();
-            if (pairsLeftBefore != deck.pairsLeft() && pairsLeftBefore == 1) {
-                if (playerTurn == 2) {
-                    p2 += 1;
-                    player2.setText("Pelaaja 2: " + p2);
-                } else if (playerTurn == 1) {
-                    p1 += 1;
-                    player1.setText("Pelaaja 1: " + p1);
+            if (deck.pairsLeft() < 2) {
+                checkCardPair();
+                if (pairsLeftBefore != deck.pairsLeft() && pairsLeftBefore == 1) {
+                    if (playerTurn == 2) {
+                        p2 += 1;
+                        player2.setText("Pelaaja 2: " + p2);
+                    } else if (playerTurn == 1) {
+                        p1 += 1;
+                        player1.setText("Pelaaja 1: " + p1);
+                    }
+                    pairsLeftBefore = deck.pairsLeft();
                 }
-                pairsLeftBefore = deck.pairsLeft();
-            }
-            if (deck.isDone()) {
-                for (int i = 0; i < deck.deckSize(); i++) {
-                    multiGameButtonList.get(i).setStyle("-fx-background-color:lightgreen; -fx-border-color:black;");
-                    if (p1 > p2) {
-                        multiGameButtonList.get(i).setText("Peli ohi!" + "\n" + "Eka voitti!");
-                    } else if (p2 > p1) {
-                        multiGameButtonList.get(i).setText("Peli ohi!" + "\n" + "Toka voitti!");
-                    } else {
-                        multiGameButtonList.get(i).setText("Tasapeli!");
+                if (deck.isDone()) {
+                    for (int i = 0; i < deck.deckSize(); i++) {
+                        multiGameButtonList.get(i).setStyle("-fx-background-color:lightgreen; -fx-border-color:black;");
+                        if (p1 > p2) {
+                            multiGameButtonList.get(i).setText("Peli ohi!" + "\n" + "Eka voitti!");
+                        } else if (p2 > p1) {
+                            multiGameButtonList.get(i).setText("Peli ohi!" + "\n" + "Toka voitti!");
+                        } else {
+                            multiGameButtonList.get(i).setText("Tasapeli!");
+                        }
                     }
                 }
             }
+
         });
 
         for (Button button : multiGameButtonList) {
