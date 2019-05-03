@@ -18,7 +18,7 @@ joka poistetaan testin lopuksi.
 ### Testauskattavuus
 
 Käyttöliittymä poisluettuna sovelluksen testien rivikattavuus on 99% ja haaraumakattavuus 100%
-![Testikattavuus]()
+![Testikattavuus](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/Testikattavuus.png)
 
 ## Järjestelmätestaus
 

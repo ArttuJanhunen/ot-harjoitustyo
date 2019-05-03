@@ -15,6 +15,8 @@ Tämä sovellus mukailee pelin ideaa.
 
 [Käyttöohjeet](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
+[Testausdokumentti](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)
+
 [Release](https://github.com/ArttuJanhunen/ot-harjoitustyo/releases)
 
 ## Komentorivitoiminnot
