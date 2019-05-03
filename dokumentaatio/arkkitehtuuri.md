@@ -1,3 +1,9 @@
+# Sovelluksen pakkausrakenne
+![Pakkausrakenne]()
+
+Pakkauksessa muistipeli.ui sisältää JavaFX -käyttöliittymän, muistipeli.logics sovelluslogiikan ja
+muistipeli.dao huipputulosten pysyväistallennuksen
+
 # Luokkakaavio
 ![Kaavio](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/Luokkakaavio.png)
 
@@ -15,5 +21,20 @@ Kaikki eri näkymät ovat Scene-olioita. Käyttöliittymä ottaa käyttöönsä 
 ja toteuttaa niiden avulla pelin toiminnallisuudet. Käyttöliittymällä on muutama oma metodi, joiden 
 avulla saadaan hyödynnettyä sovelluslogiikkaa ja manipuloitua pelin näppäinten tekstejä.
 
+### Sovelluksen pysyväistiedostojen hyödyntäminen
+DeckInitiatorille ei erillistä dao-luokkaa ole luotu, sillä kyseinen luokka käyttää vain yhtä
+metodia tiedostoja varten. ChooseDeck-metodi lukee annetun tiedoston ja alustaa sen sisällöllä
+väliaikaismuistissa olevan listan, josta pakka saa korttinsa. PlayerDao sen sijaan vastaa pelaajien
+tietojen lukemisen tiedostosta ja niitten tallettamisen tiedostoon. PlayerDao luo automaattisesti
+tiedoston huipputuloksia varten, jos sitä ei jo löydy.
+
+### Tiedostot
+Sovelluksen mukana tulee kaksi tiedostoa, animaldeck.txt ja plantdeck.txt. Kummankin sisältönä on
+kymmenen sanaa omilla riveillään. Näiden pohjalta DeckInitiator saa alustettua Deck-luokan pakan.
+Sovellus luo huipputuloslistan nimeltään highscores.txt. Sen sisään talletettava tieto on väliaikais
+-muistista löytyvät pelaajien huipputulokset, jotka talletetaan muodossa pelaajannimimerkki;aika.
+
+
 # Sekvenssikaavio
 ![Sekvenssikaavio](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio.png)
+
