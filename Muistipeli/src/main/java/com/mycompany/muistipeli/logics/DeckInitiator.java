@@ -34,6 +34,12 @@ public class DeckInitiator {
         }
     }
 
+    /**
+     * 
+     * @param file name of the wanted file
+     * @throws FileNotFoundException 
+     * This method reads files. File that it reads is given as the name of the file. As file is read the content of it is put to the private String array words.
+     */
     public void chooseDeck(String file) throws FileNotFoundException {
         File deck = new File(file);
         Scanner scanner = new Scanner(deck);

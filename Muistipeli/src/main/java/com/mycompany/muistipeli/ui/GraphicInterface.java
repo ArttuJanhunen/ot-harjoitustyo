@@ -23,9 +23,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 /**
@@ -62,7 +65,7 @@ public class GraphicInterface extends Application {
         this.p1 = 0;
         this.p2 = 0;
         this.highscoreSaver = new PlayerDao();
-        this.highscoreSaver.getHighscores(highscore);
+        this.highscoreSaver.getHighscores(highscore, "highscores.txt");
         Collections.sort(highscore);
 
     }
@@ -108,6 +111,7 @@ public class GraphicInterface extends Application {
                 }
                 for (int i = 0; i < deck.deckSize(); i++) {
                     singleGameButtonList.get(i).setText("Voitit!");
+                    singleGameButtonList.get(i).setStyle("-fx-background-color:lightgreen; -fx-border-color:black;");
 
                 }
             }
@@ -174,6 +178,7 @@ public class GraphicInterface extends Application {
             }
             if (deck.isDone()) {
                 for (int i = 0; i < deck.deckSize(); i++) {
+                    multiGameButtonList.get(i).setStyle("-fx-background-color:lightgreen; -fx-border-color:black;");
                     if (p1 > p2) {
                         multiGameButtonList.get(i).setText("Peli ohi!" + "\n" + "Eka voitti!");
                     } else if (p2 > p1) {
@@ -338,7 +343,7 @@ public class GraphicInterface extends Application {
                 if (ending > 0) {
                     listOfPlayers.getChildren().clear();
                     highscore.add(new Player(player, ending));
-                    highscoreSaver.saveHighScores(highscore);
+                    highscoreSaver.saveHighScores(highscore, "highscores.txt");
                     ending = 0;
                 }
 
@@ -355,7 +360,7 @@ public class GraphicInterface extends Application {
             listOfPlayers.getChildren().clear();
             highscore.clear();
             try {
-                highscoreSaver.getHighscores(highscore);
+                highscoreSaver.getHighscores(highscore, "highscore.txt");
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(GraphicInterface.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
@@ -432,6 +437,7 @@ public class GraphicInterface extends Application {
                 buttonList.get(i).setText(String.valueOf(i));
                 if (deck.getCard(i).isPaired()) {
                     buttonList.get(i).setText("Löydetty");
+                    buttonList.get(i).setStyle("-fx-background-color:lightgreen; -fx-border-color:black;");
                 } else if (deck.getCard(i).isFlipped()) {
                     deck.flipCard(i);
                 }

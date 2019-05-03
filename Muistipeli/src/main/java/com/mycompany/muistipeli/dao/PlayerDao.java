@@ -20,9 +20,18 @@ import java.util.logging.Logger;
  * @author ajanhune
  */
 public class PlayerDao {
+    
+    /**
+     * 
+     * @param highscores The list that will store high scores temporarily
+     * @param filename name of the file one desires to use
+     * @throws IOException 
+     * Reads high scores from given filename and inserts them to the list that is given as a parameter
+     * if given filename doesn't exist this methdod will create it
+     */
 
-    public void getHighscores(ArrayList<Player> highscores) throws IOException {
-        String path = new File("highscores.txt").getAbsolutePath();
+    public void getHighscores(ArrayList<Player> highscores, String filename) throws IOException {
+        String path = new File(filename).getAbsolutePath();
         File list = new File(path);
         Scanner scanner;
         try {
@@ -38,8 +47,15 @@ public class PlayerDao {
         }
     }
 
-    public void saveHighScores(ArrayList<Player> highscores) throws IOException {
-        String path = new File("highscores.txt").getAbsolutePath();
+    /**
+     * 
+     * @param highscores List that stores high scores temporarily
+     * @param filename name of the file one desires to use
+     * @throws IOException 
+     * This method will save the high score list to the file that is given. Information is taken from the list that is given as a parameter
+     */
+    public void saveHighScores(ArrayList<Player> highscores, String filename) throws IOException {
+        String path = new File(filename).getAbsolutePath();
         File list = new File(path);
         FileWriter writer = new FileWriter(list);
 
