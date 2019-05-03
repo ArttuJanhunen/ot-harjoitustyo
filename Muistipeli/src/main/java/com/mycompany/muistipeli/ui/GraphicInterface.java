@@ -302,6 +302,7 @@ public class GraphicInterface extends Application {
             initor.initiateDeck(deck);
             deck.shuffleDeck();
             for (int index = 0; index < singleGameButtonList.size(); index++) {
+                singleGameButtonList.get(index).setStyle(null);
                 singleGameButtonList.get(index).setText(String.valueOf(index));
             }
             stage.setScene(gameView);
@@ -317,6 +318,7 @@ public class GraphicInterface extends Application {
             pairsLeftBefore = deck.pairsLeft();
             deck.shuffleDeck();
             for (int index = 0; index < multiGameButtonList.size(); index++) {
+                multiGameButtonList.get(index).setStyle(null);
                 multiGameButtonList.get(index).setText(String.valueOf(index));
             }
             stage.setScene(multiplayerView);
