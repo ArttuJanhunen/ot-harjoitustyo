@@ -19,4 +19,5 @@
 || 1 | Javadocien kirjoittelua |
 || 1 | Testien täydennys |
 || 1 | Dokumentaation täydennys |
-| yht | 31 | |
+| 4.5. | 2 | Dokumentaation täydennys |
+| yht | 33 | |

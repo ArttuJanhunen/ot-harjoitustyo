@@ -23,18 +23,27 @@ Tämä sovellus mukailee pelin ideaa.
 
 ### Testit
 
-* Testit: mvn test
-* Testikattavuusraportti: mvn jacoco:report
-* Checkstyle: mvn jxr:jxr checkstyle:checkstyle 
-
+* Testit:
+```
+mvn test
+```
+* Testikattavuusraportti:
+``` 
+mvn jacoco:report
+```
+* Checkstyle:
+``` 
+mvn jxr:jxr checkstyle:checkstyle 
+```
 ### Suoritus komentoriviltä
-
-* mvn compile exec:java -Dexec.mainClass=com.mycompany.muistipeli.ui.GraphicInterface
-
+```
+mvn compile exec:java -Dexec.mainClass=com.mycompany.muistipeli.ui.GraphicInterface
+```
 ### Paketointi jar-tiedostoksi
-
-* mvn package
-
+```
+mvn package
+```
 ### JavaDoc -raportti
-
-* mvn javadoc:javadoc
+```
+mvn javadoc:javadoc
+```
