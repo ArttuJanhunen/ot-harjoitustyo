@@ -1,10 +1,11 @@
 # Käyttöohjeet
 
 
-* Lataa tiedosto Muistipeli-1.0-SNAPSHOT.jar
+* Lataa tiedosto Muistipeli-1.0-SNAPSHOT.jar ja tekstitiedostot animaldeck.txt ja plantdeck.txt [täältä](https://github.com/ArttuJanhunen/ot-harjoitustyo/releases)
+* Varmista, että kaikki kolme tiedostoa löytyvät samasta kansiosta
 * Käynnistä sovellus terminaalista komennolla 'java -jar Muistipeli-1.0-SNAPSHOT.jar'
 * Sovelluksen käynnistyttyä ensimmäisenä avautuu päävalikko
-* Päävalikosta voit navigoida napeilla yksinpeliin, moninpeliin tai tuloslistaan
+* Päävalikosta voit navigoida napeilla yksinpeliin, moninpeliin, tuloslistaan tai pakan valintaan
 * Yksinpeli
 	* Aika alkaa kulumaan, kun näkymä muuttuu pelinäkymäksi
 	* Kortteja painamalla ne paljastavat sanan
@@ -22,3 +23,9 @@
 * Huipputulokset
 	* Listassa yksinpelien nopeimmat pelaajat nopeimmasta lähtien
 	* 'Takaisin valikkoon'-nappi vie takaisin päävalikkoon
+* Pakan valinta 
+	* Valikkonäkymässä ylin nappi, 'Takaisin valikkoon' vie päävalikkoon
+	* Painamalla nappia 'Eläimet' valitset käyttöön pakan, jossa on eläinten nimiä
+	* Painamalla nappia 'Kasvit' valitset käyttöön pakan, jossa on kasvien nimiä
+	* Oletusarvoisena pakkana ohjelmaa käynnistettäessä on eläinaiheinen pakka
+
