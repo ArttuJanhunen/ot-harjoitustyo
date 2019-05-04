@@ -30,4 +30,10 @@ Sovellus toimii Linux-ympäristössä olettaen, että samassa kansiossa sijaitse
 animaldeck.txt ja plantdeck.txt. Huipputulosten lista luodaan kansioon, jossa peli sijaitsee, jos
 se ei ole vielä olemassa. 
 
+Sovelluksen toimintaa on myös kokeiltu Windows-ympäristössä. Ääkkösten rikkoutumista lukuunottamatta
+sovellus toimi toivotulla tavalla.
 
+## Laatuongelmat
+
+Sovellus ei ilmoita, jos huipputuloksen tallennus ei onnistunut. Tämä tapahtuu tilanteessa, jossa
+nimimerkkisyötteen kenttä jää tyhjäksi.

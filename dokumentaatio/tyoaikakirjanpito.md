@@ -15,4 +15,8 @@
 | 26.4. | 1 | Javadocien kirjoittaminen |
 || 1 | Testien täydennys |
 | 29.4. | 2 | Ohjelmointia |
-| yht | 27 | |
+| 3.5. | 1 | Ohjelmointia |
+|| 1 | Javadocien kirjoittelua |
+|| 1 | Testien täydennys |
+|| 1 | Dokumentaation täydennys |
+| yht | 31 | |

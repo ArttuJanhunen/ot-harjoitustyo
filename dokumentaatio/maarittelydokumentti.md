@@ -2,27 +2,24 @@
 
 Sovellus on nimensä mukaisesti muistipeli. Pelissä siis on erilaisia objekteja, joilla on pari.
 Käyttäjä eli pelaaja pelaa muistipeliä valitsemalla yksittäisiä objekteja, aina kaksi objektia vuorolla.
-Jos objektit ovat toistensa parit, pelaaja saa pisteen ja pari poistuu pelilaudalta. Tätä jatketaan,
-kunnes pelissä vaadittu tavoite tai aikaraja saavutetaan.
+Jos objektit ovat toistensa parit, ne merkitään löydetyiksi. Tätä jatketaan,
+kunnes pelilaudalla olevat kortit ovat kaikki löydetty.
 
-Käyttäjäroolia sovelluksessa varsinaisesti ole, pelaajille voidaan peli ajaksi antaa nimimerkit, jotka
-pidetään tallessa pelierän verran, tai talletetaan pistetaulukkoon.
+Käyttäjäroolia sovelluksessa varsinaisesti ole, pelin jälkeen käyttäjä voi tallentaa tuloksensa
+nimimerkin kera pistetaulukkoon.
 
 Toiminnallisuudet: 
 
 * Yksinpeli
-	* Peli aikarajaa vastaan, pisteet talletetaan nimimerkin kera pistetaulukkoon
-* Moninpeli
-	* Ilmottautuneiden nimimerkkien verran pelaajia toisiaan vastaan
+	* Peli aikaa vastaan, aika talletetaan nimimerkin kera tulostaulukkoon
+* Kaksinpeli
 	* Pelaajat pelaavat vuorollaan
 	* Voittaja on eniten pisteitä kerännyt, kun pelilauta on tyhjä
 	* Pisteitä ei talleteta taulukkoon
 * Pelitavat
 	* Sanat objekteina
-	* Vaikeustasoa nostaessa esimerkiksi
-		* Samoja sanoja erivärisinä objekteina
 * Rajoitteet
-	* Pistetaulukko tallennetaan paikalliseen muistiin tietokantaan
+	* Pistetaulukko tallennetaan paikalliseen muistiin tekstitiedostoon
 	* Sovellus toimii linux-pohjaisilla järjestelmillä
 * Jatkokehitysideoita
 	* Kuvakortteja objektipareina

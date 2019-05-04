@@ -38,3 +38,9 @@ Sovellus luo huipputuloslistan nimeltään highscores.txt. Sen sisään talletet
 # Sekvenssikaavio
 ![Sekvenssikaavio](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio.png)
 
+## Heikkoudet rakenteessa
+
+### Käyttöliittymä
+Käyttöliittymä on muutamaa apumetodia lukuunottamatta määritelty kokonaan GraphicInterface-luokan
+start -metodissa. Eri Scene-olioiden eriyttäminen esimerkiksi omaan luokkaansa auttaisi jo paljon. 
+Myös nappien tilanmuutokset voisi toteuttaa metodeilla. 

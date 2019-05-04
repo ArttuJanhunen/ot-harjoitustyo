@@ -347,7 +347,7 @@ public class GraphicInterface extends Application {
         submitPlayer.setOnAction(e -> {
             try {
                 String player = playerName.getText();
-                if (ending > 0) {
+                if (ending > 0 && !player.isEmpty()) {
                     listOfPlayers.getChildren().clear();
                     highscore.add(new Player(player, ending));
                     highscoreSaver.saveHighScores(highscore, "highscores.txt");
