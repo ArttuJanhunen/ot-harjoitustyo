@@ -35,8 +35,9 @@ Sovellus luo huipputuloslistan nimeltään highscores.txt. Sen sisään talletet
 -muistista löytyvät pelaajien huipputulokset, jotka talletetaan muodossa pelaajannimimerkki;aika.
 
 
-# Sekvenssikaavio
-![Sekvenssikaavio](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavio.png)
+# Sekvenssikaavioita sovelluksen toiminnasta
+![Pakan alustus](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavioPakka.png)
+![Huipputulosten näyttäminen](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/sekvenssikaavioHuipputulos.png)
 
 ## Heikkoudet rakenteessa
 
