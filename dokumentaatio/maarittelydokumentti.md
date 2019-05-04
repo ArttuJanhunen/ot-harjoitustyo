@@ -18,6 +18,7 @@ Toiminnallisuudet:
 	* Pisteitä ei talleteta taulukkoon
 * Pelitavat
 	* Sanat objekteina
+	* Kaksi pakkaa, eläinaiheinen ja kasviaiheinen pakka
 * Rajoitteet
 	* Pistetaulukko tallennetaan paikalliseen muistiin tekstitiedostoon
 	* Sovellus toimii linux-pohjaisilla järjestelmillä
