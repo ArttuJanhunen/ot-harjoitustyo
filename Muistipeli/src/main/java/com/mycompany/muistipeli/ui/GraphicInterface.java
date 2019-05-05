@@ -100,7 +100,7 @@ public class GraphicInterface extends Application {
 
         TextField playerName = new TextField("Anna nimi");
         playerName.setMaxWidth(100);
-        Button submitPlayer = new Button("Tallenna" + "\n" + "tuloksesi!");
+        Button submitPlayer = new Button("Tallenna" + "\n" + "tuloksesi!"+"\n"+"1-20"+"\n"+"merkkiä");
 
         checkSingleButton.setOnAction(e -> {
             if (deck.pairsLeft() < 2) {
@@ -347,11 +347,13 @@ public class GraphicInterface extends Application {
         submitPlayer.setOnAction(e -> {
             try {
                 String player = playerName.getText();
-                if (ending > 0 && !player.isEmpty()) {
+                if (ending > 0 && !player.isEmpty() && player.length()<=20) {
                     listOfPlayers.getChildren().clear();
                     highscore.add(new Player(player, ending));
                     highscoreSaver.saveHighScores(highscore, "highscores.txt");
                     ending = 0;
+                }else if (player.isEmpty() || player.length()>20){
+                    playerName.setText("Yritä uudelleen");
                 }
 
             } catch (Exception a) {

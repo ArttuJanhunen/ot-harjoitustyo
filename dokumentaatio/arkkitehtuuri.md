@@ -45,3 +45,6 @@ Sovellus luo huipputuloslistan nimeltään highscores.txt. Sen sisään talletet
 Käyttöliittymä on muutamaa apumetodia lukuunottamatta määritelty kokonaan GraphicInterface-luokan
 start -metodissa. Eri Scene-olioiden eriyttäminen esimerkiksi omaan luokkaansa auttaisi jo paljon. 
 Myös nappien tilanmuutokset voisi toteuttaa metodeilla. 
+
+### DAO
+PlayerDao on toteutettu ilman rajapintaa.

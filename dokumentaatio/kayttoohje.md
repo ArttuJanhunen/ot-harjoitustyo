@@ -13,6 +13,7 @@
 	* Jos kortit ovat pari, niiden tekstiksi muuttuu 'löydetty' painamalla kääntämätöntä korttia
 	* Viimeinen pari tarkastetaan 'Tarkasta'-napilla, jolloin aika pysähtyy
 	* Halutessaan oman nimensä voi lisätä huipputuloslistaan syöttämällä sen alavasemmalle kenttään pelin loputtua ja painamalla nappia 'Tallenna tuloksesi'
+	* Nimen on oltava 1-20 merkkiä pitkä
 	* Päävalikkoon pääsee takaisin painamalla nappia 'Poistu'
 * Moninpeli
 	* Vasemmassa alareunassa näkyy kumman pelaajan vuoro on

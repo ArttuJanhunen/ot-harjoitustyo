@@ -35,5 +35,6 @@ sovellus toimi toivotulla tavalla.
 
 ## Laatuongelmat
 
-Sovellus ei ilmoita, jos huipputuloksen tallennus ei onnistunut. Tämä tapahtuu tilanteessa, jossa
-nimimerkkisyötteen kenttä jää tyhjäksi.
+Sovellus ei toimi jos pakkatiedostoja ei ole. Korttien kääntämisessä tarvitaan ylimääräinen painallus
+kääntämättömään korttiin ja lopussa tarkastus-nappiin. Tätä koitettiin ratkaista viivetoteutuksella
+ilmeisen huonolla menestyksellä.
