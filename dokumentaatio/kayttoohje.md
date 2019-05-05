@@ -1,9 +1,9 @@
 # Käyttöohjeet
 
 
-* Lataa tiedosto Muistipeli-1.0-SNAPSHOT.jar ja tekstitiedostot animaldeck.txt ja plantdeck.txt [täältä](https://github.com/ArttuJanhunen/ot-harjoitustyo/releases)
+* Lataa tiedosto Muistipeli.jar ja tekstitiedostot animaldeck.txt ja plantdeck.txt [täältä](https://github.com/ArttuJanhunen/ot-harjoitustyo/releases/tag/Viikko7)
 * Varmista, että kaikki kolme tiedostoa löytyvät samasta kansiosta
-* Käynnistä sovellus terminaalista komennolla 'java -jar Muistipeli-1.0-SNAPSHOT.jar'
+* Käynnistä sovellus terminaalista komennolla 'java -jar Muistipeli.jar'
 * Sovelluksen käynnistyttyä ensimmäisenä avautuu päävalikko
 * Päävalikosta voit navigoida napeilla yksinpeliin, moninpeliin, tuloslistaan tai pakan valintaan
 * Yksinpeli

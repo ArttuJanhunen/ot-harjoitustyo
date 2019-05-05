@@ -20,4 +20,5 @@
 || 1 | Testien täydennys |
 || 1 | Dokumentaation täydennys |
 | 4.5. | 2 | Dokumentaation täydennys |
-| yht | 33 | |
+| 5.5. | 1 | Viimeiset silaukset |
+| yht | 34 | |

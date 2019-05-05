@@ -17,7 +17,9 @@ Tämä sovellus mukailee pelin ideaa.
 
 [Testausdokumentti](https://github.com/ArttuJanhunen/ot-harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)
 
-[Release](https://github.com/ArttuJanhunen/ot-harjoitustyo/releases)
+[Releaset](https://github.com/ArttuJanhunen/ot-harjoitustyo/releases)
+
+[Lopullinen release](https://github.com/ArttuJanhunen/ot-harjoitustyo/releases/tag/Viikko7)
 
 ## Komentorivitoiminnot
 
